@@ -37,6 +37,11 @@
 				hibernate.format_sql=true
 			</value>
 		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.dem.domain</value>
+			</list>
+		</property>
 		<property name="mappingLocations" value="classpath:com/dem/domain/*.hbm.xml"/>
 	</bean>
 	<!-- 引入事务管理器 数据库配置,sessionfactory-->
