@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = {"/", "/index"})
+    @RequestMapping(value = {"/", "/index"},method = RequestMethod.GET)
     public String index() {
         return "index";
     }
 
     @RequestMapping(value = "/echo",method = RequestMethod.GET)
     @ResponseBody
-    public String echo(){
-        return "echo";
+    public String echo(String name){
+        return "echo:"+name;
     }
 }
