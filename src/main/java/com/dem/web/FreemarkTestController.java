@@ -22,9 +22,9 @@ public class FreemarkTestController {
     public String page(ModelMap model) {
         model.put("title", "天秀娟");
         model.put("string", "1");
-        model.put("rangData",20);
-        model.put("curTime",new Date());
-        model.put("price",10000.00D);
+        model.put("rangData", 20);
+        model.put("curTime", new Date());
+        model.put("price", 10000.00D);
         List<Person> list = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             Person p = new Person();
@@ -34,19 +34,22 @@ public class FreemarkTestController {
         }
 
 
-
         model.put("personList", list);
         return "/freemark";
     }
 
     public static void main(String[] args) throws IOException, TimeoutException {
+
+
+    }
+
+    private Connection getConn() throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setUsername("guest");
         factory.setPassword("guest");
         factory.setVirtualHost("/");
         factory.setHost("localhost");
         factory.setPort(5672);
-        Connection connection = factory.newConnection();
-
+        return factory.newConnection();
     }
 }
