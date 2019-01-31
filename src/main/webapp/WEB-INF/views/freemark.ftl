@@ -25,6 +25,27 @@ list 遍历
 </table>
 
 <br>
+<table width="100%">
+    <thead>
+    <tr>
+        <th>名字</th>
+        <th>手机</th>
+    </tr>
+    </thead>
+    <tbody>
+    <#list nameList as nameStr>
+        <#assign arr = "${nameStr}"?split("_")>
+    <#if arr?size gte 2 >
+           <tr>
+               <td>${arr[0]}</td>
+               <td>${arr[1]}</td>
+           </tr>
+    </#if>
+
+    </#list>
+    </tbody>
+
+</table>
 <hr>
 rangData 所属区间
 <#if rangData lt 0>
